@@ -1,0 +1,191 @@
+.app {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+}
+.aaaa {
+  position: fixed;
+  top: 4rem;
+  width: 18rem;
+}
+
+.a {
+  position: relative;
+  margin-top: 0.25rem;
+}
+
+.custom-class {
+  position: relative;
+  width: 100%;
+  cursor: default;
+  overflow: hidden;
+  border-radius: 0.5rem; /* You can adjust the border-radius value as needed */
+  background-color: #fff; /* You can adjust the background color as needed */
+  text-align: left;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  outline: none;
+  display: flex;
+}
+
+.custom-class:focus-visible {
+  color: teal;
+}
+
+.searchInput {
+  width: 100%;
+  border-style: none;
+  border-radius: 0.25rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-right: 2.5rem;
+  padding-left: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(17 24 39);
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: rgb(17 24 39);
+}
+
+.chooseButton {
+  padding-right: 0.5rem;
+  align-items: center;
+  align-items: center;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+
+  > svg {
+    color: rgb(156 163 175);
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.listOptions {
+  position: absolute;
+  padding: 0;
+  margin-top: 0.25rem;
+  max-height: 75rem;
+  width: 100%;
+  overflow: auto;
+  border-radius: 0.375rem;
+  background-color: #fff;
+  padding-bottom: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  list-style: none;
+}
+
+.listOptions:focus {
+  outline: none;
+}
+
+.options {
+  display: flex;
+  color: rgb(17 24 39);
+  padding-right: 1rem;
+  padding-left: 2.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  user-select: none;
+  cursor: default;
+  position: relative;
+  margin-top: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.option {
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.chooseOption {
+  color: rgb(13, 148, 136);
+  padding-left: 0.75rem;
+  align-items: center;
+  display: flex;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  border-radius: 0.25rem;
+  > svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+
+
+.options:hover {
+  color: #fff;
+  background-color: rgb(13, 148, 136);
+}
+
+.nothingFound {
+  color: rgb(55, 65, 81);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  user-select: none;
+  cursor: default;
+  position: relative;
+}
+
+.active {
+  color: #fff;
+  background-color: rgb(13, 148, 136);
+}
+
+.selected {
+  font-weight: 500;
+}
+
+.listScroll {
+  width: 100%;
+  overflow: auto;
+  border-radius: 0.375rem;
+  background-color: #fff;
+  padding-bottom: 0.25rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.listScroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.listScroll::-webkit-scrollbar-thumb {
+  background-color: rgb(226, 226, 226);
+  border-radius: 2px;
+}
+
+.listScroll::-webkit-scrollbar-track {
+ background-color: #fff;
+}
+
+@media (min-width: 640px) {
+  .custom-class .listOptions {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
