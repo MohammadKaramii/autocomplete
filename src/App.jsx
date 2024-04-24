@@ -1,15 +1,15 @@
-import "./Autocomplete.css";
+import "./App.css";
+import ArrowDown from "./assets/arrowdown.jsx"
+import  { useState, useEffect } from "react";
+import Tick from "./assets/tick.jsx";
 
-import React, { useState, useEffect } from "react";
-
-const Autocomplete = () => {
+const App = () => {
   const [options, setOptions] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [open, setOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const [title, setTitle] = useState("");
   const [hoveredOption, setHoveredOption] = useState(null);
-  const [showMore, setShowMore] = useState(false);
   const [displayedOptions, setDisplayedOptions] = useState(5);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
@@ -44,7 +44,6 @@ const Autocomplete = () => {
   };
 
   const handleShowMore = (increment) => {
-    setShowMore(true);
     if (displayedOptions + increment <= options.length) {
       setDisplayedOptions(displayedOptions + increment === 0 ? 5 : displayedOptions + increment);
     } else {
@@ -77,12 +76,7 @@ console.log(displayedOptions);
             tabIndex="-1"
             onClick={() => setOpen(!open)}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path
-                d="M12 15a1 1 0 0 1-.707-.293l-4-4a1 1 0 1 1 1.414-1.414L12 12.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-4 4A1 1 0 0 1 12 15z"
-                fill="#ef767a"
-              />
-            </svg>
+           <ArrowDown />
           </button>
         </div>
         {open ? (
@@ -120,18 +114,7 @@ console.log(displayedOptions);
                         }`}
                         tabIndex="-1"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
+                       <Tick />
                       </span>
                     ) : null}
                   </li>
@@ -162,4 +145,4 @@ console.log(displayedOptions);
   );
 };
 
-export default Autocomplete;
+export default App;
